@@ -5,7 +5,11 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        'half': '50vh',
+      }
+    },
   },
   plugins: [require("tw-elements/dist/plugin.cjs")],
   darkMode: "class"

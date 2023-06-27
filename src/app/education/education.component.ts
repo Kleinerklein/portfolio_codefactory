@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
-import { IEducation } from '../IEducation';
-import { educations } from '../education';
+import { IEducation } from '../../data/IEducation';
+import { educations } from '../../data/education';
 
 @Component({
   selector: 'app-education',

@@ -3,4 +3,5 @@ export interface IEducation{
     title: string,
     image: string,
     finished: Date,
+    link?: string,
 }
