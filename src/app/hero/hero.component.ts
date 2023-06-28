@@ -42,4 +42,8 @@ export class HeroComponent implements AfterViewInit, OnInit{
       });
     };
   }
+  scrollTo(section: string ) {
+    const selectet = document.querySelector('#' + section) as any;
+    selectet.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }

@@ -1,6 +1,6 @@
 <!-- Main navigation container -->
 <nav
-  class="sticky top-0 z-40 flex w-full flex-nowrap items-center justify-between bg-neutral-900 py-2 text-neutral-400 shadow-lg hover:text-neutral-100 focus:text-neutral-700 dark:bg-neutral-600 lg:flex-wrap lg:justify-start lg:py-4 shadow-cyan-500/50"
+  class="sticky top-0 z-40  md:px-10 px-3 flex w-full flex-nowrap items-center justify-between bg-neutral-900 py-2 text-neutral-400 shadow-lg hover:text-neutral-100 focus:text-neutral-700 dark:bg-neutral-600 lg:flex-wrap lg:justify-start lg:py-4 shadow-cyan-500/50"
   data-te-navbar-ref>
   <div class="flex w-full flex-wrap items-center justify-between px-3">
     <!-- Navbar title -->
@@ -54,26 +54,63 @@
           <a
           class="p-0 text-neutral-400 hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             aria-current="page"
-            href="#"
+            
             data-te-nav-link-ref
+            (click)="scrollTo('hero')"
             >Home</a
           >
         </li>
+        <!-- description link -->
+        
+        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+          <a
+            class="p-0 text-neutral-400 hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            
+            data-te-nav-link-ref
+            (click)="scrollTo('description')"
+            >Description</a
+          >
+        </li>
+        <!-- description link -->
+        
+        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+          <a
+            class="p-0 text-neutral-400 hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            
+            data-te-nav-link-ref
+            (click)="scrollTo('tech')"
+            >Tools</a
+          >
+        </li>
+        
         <!-- education link -->
         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
           <a
             class="p-0 text-neutral-400 hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
+            
             data-te-nav-link-ref
+            (click)="scrollTo('education')"
             >Education</a
+          >
+        </li>
+        <!-- description link -->
+        
+        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+          <a
+            class="p-0 text-neutral-400 hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            
+            data-te-nav-link-ref
+            (click)="scrollTo('projects')"
+            >Projects</a
           >
         </li>
         <!-- contact link -->
         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
           <a
             class="p-0 text-neutral-400 hover:text-neutral-100 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
+            
             data-te-nav-link-ref
+            (click)="scrollTo('contact')"
             >Contact me</a>
         </li>
       </ul>

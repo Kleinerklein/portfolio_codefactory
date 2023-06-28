@@ -12,6 +12,11 @@ import { LogoanimateComponent } from './logoanimate/logoanimate.component';
 import { HeroComponent } from './hero/hero.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ObjectComponent } from './object/object.component';
+import { CommonModule } from '@angular/common';
+import { DescriptionComponent } from './description/description.component';
+import { ColorobjectComponent } from './colorobject/colorobject.component';
+// import { SceneComponent } from './scene/scene.component';
 
 
 @NgModule({
@@ -24,6 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LogoanimateComponent,
     HeroComponent,
     ProjectsComponent,
+    DescriptionComponent,
+    ColorobjectComponent,
+    // ObjectComponent,
+    // SceneComponent,
         
   ],
   imports: [
@@ -31,6 +40,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ObjectComponent,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
