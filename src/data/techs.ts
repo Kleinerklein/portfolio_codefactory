@@ -29,7 +29,30 @@ export const techs: ITech[] =[
         name: "tailwind",
         icon: "assets/images/tech/tailwind.png"
     },
-    
+    {
+        name: "threejs",
+        icon: "assets/images/tech/threejs.png"
+    },
+    {
+        name: "SQL",
+        icon: "assets/images/tech/sql-server.png"
+    },  
+    {
+        name: "unity",
+        icon: "assets/images/tech/unity2.jpg"
+    },
+    {
+        name: "python",
+        icon: "assets/images/tech/python.png"
+    },
+    {
+        name: "c-sharp",
+        icon: "assets/images/tech/c-sharp.png"
+    },
+    {
+        name: "matlab",
+        icon: "assets/images/tech/matlab.png"
+    },            
 
     
 ]

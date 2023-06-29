@@ -1,6 +1,9 @@
-<div class="container mx-auto my-5">
+<div class="container mx-auto my-5 grid md:grid-cols-2 grid-cols-1">
+    <div class="flex justify-center items-center">
+      <canvas id="globe"></canvas>
+    </div>
     <div
-      class="block  rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+      class="block grow max-w-3xl rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
       <div>
         <h1 class="font-bold text-xl">Contact me</h1>
       </div>
@@ -39,7 +42,7 @@
           <textarea
             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
             id="exampleFormControlTextarea13"
-            rows="3"
+            [rows]="textareaRows"
             placeholder="Message" formControlName="message" name="message"></textarea>
           <label
             for="exampleFormControlTextarea13"

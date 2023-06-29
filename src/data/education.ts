@@ -32,7 +32,7 @@ export const educations: IEducation[] = [
     {
         institution: "CodeFactory",
         title: "Full Stack Web Developer",
-        image: "../",
+        image: "assets/images/institutions/codeFactory.png",
         finished: new Date(2023,8),
         link: "https://codefactory.wien/de/full-stack-web-developer-de/"
     },
