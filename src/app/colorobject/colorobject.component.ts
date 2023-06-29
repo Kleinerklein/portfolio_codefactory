@@ -38,7 +38,7 @@ export class ColorobjectComponent implements  AfterViewInit {
     // add decal ontop of geometry
     const decal = new DecalGeometry(
       mesh,
-      new THREE.Vector3(0,0,1.35),
+      new THREE.Vector3(-0.06,0,1.35),
       new THREE.Euler(0,0, 0, 'YXZ'),
       new THREE.Vector3(1.6,1.6,1.6)
     );
@@ -55,6 +55,16 @@ export class ColorobjectComponent implements  AfterViewInit {
     // add new decal
     const meshBack = new THREE.Mesh( decal, materialBack );
     scene.add( meshBack );
+
+    // add decal back
+    const decalBack = new DecalGeometry(
+      mesh,
+      new THREE.Vector3(0.2,0,-1.2),
+      new THREE.Euler(0,160, 0, 'YXZ'),
+      new THREE.Vector3(1.6,1.6,1.6)
+    );
+    const meshFront = new THREE.Mesh( decalBack, materialBack );
+    scene.add( meshFront );
 
     // sizes
     const sizes = {
@@ -82,7 +92,13 @@ export class ColorobjectComponent implements  AfterViewInit {
     controls.enablePan = false;
     controls.enableZoom = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = -3;
+
+    const randomNumber =
+    Math.floor(Math.random() * 2) === 0 // Randomly choose between positive and negative numbers
+      ? Math.random() * (3 - 2) + 2 // Positive random number between 3 and 2
+      : Math.random() * (3 - 2) - 3; // Negative random number between -3 and -2
+
+    controls.autoRotateSpeed =  randomNumber;
 
     // update renderer and controls
     const animate = () => {
