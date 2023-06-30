@@ -15,9 +15,9 @@ export class NavbarComponent implements OnInit{
 
   scrollTo(section: string ) {
     const selected = document.querySelector('#' + section) as any;
-    var headerOffset = 75;
+    var headerOffset = 350;
     var elementPosition = selected.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    var offsetPosition = elementPosition + window.scrollY - headerOffset;
 
     window.scrollTo({
       top: offsetPosition,

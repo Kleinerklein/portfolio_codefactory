@@ -27,6 +27,27 @@ export class ContactComponent implements OnInit,AfterViewInit{
   }
   ngAfterViewInit(): void {
     this.showGlobe()
+
+    const observer = new IntersectionObserver(entries => {
+      // Loop over the entries
+      entries.forEach(entry => {
+        const globeAni = entry.target.querySelector('.globe') as any;
+        const contactAni = entry.target.querySelector('.contact') as any;
+        // If the element is visible
+        if (entry.isIntersecting) {
+          // Add the animation class
+          globeAni.classList.add('animate__fadeInLeft');
+          contactAni.classList.add('animate__fadeInRight')
+          return;
+        }
+        globeAni.classList.remove('animate__fadeInLeft')
+        contactAni.classList.remove('animate__fadeInRight')
+      });
+    });
+    
+    
+    observer.observe(document.querySelector('.fade') as any);
+
   }
 
   newContact = new FormGroup({
@@ -78,9 +99,19 @@ export class ContactComponent implements OnInit,AfterViewInit{
       0.01,
       1000
     );
-  const canvas = document.getElementById('globe') as HTMLElement;
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha:true });
-  renderer.setSize(300,300)
+    camera.position.set(0,0,15);
+
+    // size
+    let globeWidth:number = 300;
+    let globeHeight: number = 300;
+    if (window.innerWidth < 500){
+      globeWidth = 250;
+      globeHeight = 260;
+       camera.position.set(0,0,28);
+    }
+    const canvas = document.getElementById('globe') as HTMLElement;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha:true });
+    renderer.setSize(globeWidth,globeHeight)
   
  // Instantiate a loader
     const loader = new GLTFLoader();
@@ -113,7 +144,7 @@ export class ContactComponent implements OnInit,AfterViewInit{
     scene.add(light);
 
     
-    camera.position.set(0,0,15);
+    
     
     
     

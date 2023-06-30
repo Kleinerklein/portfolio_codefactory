@@ -43,7 +43,14 @@ export class HeroComponent implements AfterViewInit, OnInit{
     };
   }
   scrollTo(section: string ) {
-    const selectet = document.querySelector('#' + section) as any;
-    selectet.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    const selected = document.querySelector('#' + section) as any;
+    var headerOffset = 350;
+    var elementPosition = selected.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    })
   }
 }

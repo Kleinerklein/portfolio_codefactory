@@ -27,7 +27,7 @@ export class ColorobjectComponent implements  AfterViewInit {
     // scene
     const scene = new THREE.Scene();
     // geometry
-    const geometry = new THREE.SphereGeometry(1, 16, 7);
+    const geometry = new THREE.SphereGeometry(1, 35, 40);
     const material = new THREE.MeshStandardMaterial({ color: '#ffffff'});
     material.flatShading = true;
     material.polygonOffset = true;
@@ -38,7 +38,7 @@ export class ColorobjectComponent implements  AfterViewInit {
     // add decal ontop of geometry
     const decal = new DecalGeometry(
       mesh,
-      new THREE.Vector3(-0.06,0,1.35),
+      new THREE.Vector3(0,0,1.36),
       new THREE.Euler(0,0, 0, 'YXZ'),
       new THREE.Vector3(1.6,1.6,1.6)
     );
