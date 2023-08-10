@@ -90,25 +90,44 @@ export class ContactComponent implements OnInit,AfterViewInit{
   }
   
   showGlobe(){
-    
+     // size
+    let globeWidth:number = 300;
+    let globeHeight: number = 300;
+
     // scene
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      globeWidth / globeHeight,
       0.01,
       1000
     );
     camera.position.set(0,0,15);
 
-    // size
-    let globeWidth:number = 300;
-    let globeHeight: number = 300;
-    if (window.innerWidth < 500){
-      globeWidth = 250;
-      globeHeight = 260;
-       camera.position.set(0,0,28);
+   
+    if (window.innerWidth < 780){
+      globeWidth = 200;
+      globeHeight = 200;
+      camera.position.set(0,0,20);
     }
+
+    function resizeGlobe(){
+      if(window.innerWidth < 780){
+        globeWidth = 200;
+        globeHeight = 200;
+        camera.position.set(0,0,20);
+        // renderer.render(scene, camera);
+        //  console.log(window.innerWidth)
+      }else{
+        globeWidth = 300;
+        globeHeight = 300;
+        camera.position.set(0,0,15);
+        // renderer.render(scene, camera);
+        // console.log(camera.position)
+      }
+    }
+    window.addEventListener('resize',resizeGlobe);
+    
     const canvas = document.getElementById('globe') as HTMLElement;
     const renderer = new THREE.WebGLRenderer({ canvas, alpha:true });
     renderer.setSize(globeWidth,globeHeight)
@@ -142,11 +161,6 @@ export class ContactComponent implements OnInit,AfterViewInit{
     // scene.background = new THREE.Color(0xFFFFFF)
     const light = new THREE.HemisphereLight(0xffffff, 0x000000, 2);
     scene.add(light);
-
-    
-    
-    
-    
     
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
@@ -159,6 +173,7 @@ export class ContactComponent implements OnInit,AfterViewInit{
     const animate = () => {
 
       controls.update();
+      renderer.setSize(globeWidth,globeHeight)
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };

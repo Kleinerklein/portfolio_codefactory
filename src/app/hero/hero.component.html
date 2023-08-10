@@ -9,7 +9,13 @@
           </div>
       
           <div class="">
-            <img class="h-48 w-full object-cover rounded-full" src="assets/images/photo.jpg" alt="Me">
+            <!-- <img class="h-48 w-full object-cover rounded-full" src="assets/images/photo.jpg" alt="Me"> -->
+            <canvas riv="me" width="400" height="400" >
+              <riv-state-machine name="follow" play>
+                <riv-input name="xInput" [value]="xValue"></riv-input>
+                <riv-input name="yInput" [value]="yValue"></riv-input>
+              </riv-state-machine>
+            </canvas>
           </div>
         </div>
       </div>
@@ -22,5 +28,6 @@
           </div>
         </a>
       </div>
+      
       
       

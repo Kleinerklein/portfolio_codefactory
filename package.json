@@ -25,6 +25,7 @@
     "angular-three-cannon": "^1.6.1",
     "angular-three-soba": "^1.14.1",
     "animate.css": "^4.1.1",
+    "ng-rive": "^0.3.0",
     "particles.js": "^2.0.0",
     "particlesjs": "^2.2.3",
     "rxjs": "~7.8.0",

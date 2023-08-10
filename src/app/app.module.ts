@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { DescriptionComponent } from './description/description.component';
 import { ColorobjectComponent } from './colorobject/colorobject.component';
 import { FooterComponent } from './footer/footer.component';
+import { RiveModule } from 'ng-rive';
 // import { SceneComponent } from './scene/scene.component';
 
 
@@ -38,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
         
   ],
   imports: [
+    RiveModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

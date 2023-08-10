@@ -18,6 +18,8 @@ declare var Particles: any;
 export class HeroComponent implements AfterViewInit, OnInit{
 
   animationState: string = '0';
+  xValue:number = 0;
+  yValue:number = 0;
   
   ngOnInit() {
     setInterval(() => {
@@ -29,6 +31,14 @@ export class HeroComponent implements AfterViewInit, OnInit{
   ngAfterViewInit() {
 
     // animation
+    const getCoordinates = (event: MouseEvent) => {
+      this.xValue = 100 / window.innerWidth * event.clientX;
+      this.yValue = 100 - (100 / window.innerHeight * event.clientY);
+      console.log(`${this.xValue},${this.yValue}`);
+    };
+    document.addEventListener('mousemove', getCoordinates);
+  
+
 
 
     // particles
